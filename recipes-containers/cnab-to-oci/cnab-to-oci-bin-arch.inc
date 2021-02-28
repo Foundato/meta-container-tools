@@ -1,5 +1,5 @@
 # Select pre-compiled package based on target architecture
-def cnab-to-oci_pkg_arch_map(d):
+def cnab_to_oci_pkg_arch_map(d):
     arch = d.getVar('TARGET_ARCH', True)
     tune = d.getVar('TUNE_FEATURES', True)
     tune_features = tune.split()
@@ -17,4 +17,4 @@ def cnab-to-oci_pkg_arch_map(d):
 
     return pkg
 
-CNAB_TO_OCI_PKG_ARCH = "${@cnab-to-oci_pkg_arch_map(d)}"
+CNAB_TO_OCI_PKG_ARCH = "${@cnab_to_oci_pkg_arch_map(d)}"
