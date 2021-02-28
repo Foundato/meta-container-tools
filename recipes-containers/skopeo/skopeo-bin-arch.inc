@@ -9,6 +9,8 @@ def skopeo_pkg_arch_map(d):
             pkg = "amd64"
     elif arch == "aarch64" or arch == "arm64":
         pkg = "arm64"
+    elif arch == "arm":
+        pkg = "arm"
 
     if pkg is None:
         raise bb.parse.SkipPackage("Target architecture '%s' is not supported by the skopeo layer" %arch)
